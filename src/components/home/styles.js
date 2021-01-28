@@ -32,7 +32,7 @@ export const IndicatorsBox = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -120px;
+    margin-top: -250px;
 `;
 
 export const ProfileBar = styled.div`
@@ -141,7 +141,8 @@ export const TitleContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 150px;
+    margin: -30px 150px;
+    max-height: 150px;
 `;
 
 export const Title = styled.div`
