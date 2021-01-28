@@ -10,7 +10,10 @@ import {
   UserAvatar,
   User,
   LogoFielder,
-  Icones
+  Icones,
+  TitleContainer,
+  Title,
+  ButtonContainer
 } from './styles';
 import Logo from '../../assets/logo.svg';
 import { AiFillFolderOpen } from 'react-icons/ai';
@@ -25,6 +28,8 @@ import { AiOutlineMail } from 'react-icons/ai';
 import { BiPaste } from 'react-icons/bi';
 import { BsGear } from 'react-icons/bs';
 import { IconContext } from 'react-icons';
+import { BiPencil } from 'react-icons/bi';
+import { AiOutlinePlus } from 'react-icons/ai';
 
 function Home() {
   return (
@@ -75,6 +80,19 @@ function Home() {
 
         </ProfileBar>
       </SearchBar>
+
+      <TitleContainer>
+        <Title>
+          <h1>Dashboard</h1>
+          <p>Mobile UX/UI Design course</p>
+        </Title>
+
+        <ButtonContainer>
+          <button><BiPencil />Manage dashboard</button>
+          <button><AiOutlinePlus />Create new dashboard</button>
+        </ButtonContainer>
+
+      </TitleContainer>
 
       <IndicatorsBox>
         {

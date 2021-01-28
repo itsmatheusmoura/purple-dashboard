@@ -132,3 +132,80 @@ export const Icones = styled.div`
         fill: #6F52ED
     }
 `;
+
+export const TitleContainer = styled.div`
+    grid-column: 2/6;
+    grid-row: 2/3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 150px;
+`;
+
+export const Title = styled.div`
+    p{
+        font-size: 14px;
+        color: #A6ACBE;
+        margin-top: 5px;
+    }
+
+    h1{
+        font-size: 30px;
+    }
+`;
+
+export const ButtonContainer = styled.div`
+    display: flex;
+    align-items: center;
+
+    button{
+        margin-right: 15px;
+        border: 1px solid #DADCE5;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        color: #6F52ED;
+        border-radius: 4px;
+        cursor: pointer;
+
+        svg{
+            margin-right: 5px;
+            fill: #6F52ED;
+        }
+
+        &:nth-child(1){
+            background-color: #DADCE5;
+        }
+
+        &:nth-child(2){
+            background-color: #6F52ED;
+            color: #FFFFFF;
+
+            svg{
+                fill: #FFFFFF;
+            }
+        }
+
+        &:nth-child(1):hover{
+            background-color: #6F52ED;
+            transition: 400ms;
+            color: #FFFFFF;
+
+            svg{
+                fill: #FFFFFF;
+            }
+        }
+
+        &:nth-child(2):hover{
+            background-color: #DADCE5;
+            transition: 400ms;
+            color: #FFFFFF;
+
+            svg{
+                fill: #6F52ED;
+            }
+        }
+
+
+    }
+`;
