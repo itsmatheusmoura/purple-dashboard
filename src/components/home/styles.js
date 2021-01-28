@@ -27,10 +27,12 @@ export const SearchBar = styled.div`
 export const IndicatorsBox = styled.div`
     grid-column-start: 2;
     grid-column-end: 6;
+    grid-row: 3/4;
 
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: -120px;
 `;
 
 export const ProfileBar = styled.div`
