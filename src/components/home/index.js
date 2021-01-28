@@ -9,9 +9,8 @@ import {
   Login,
   UserAvatar,
   User,
-  IconsBar,
-  ConfigIcon,
-  LogoFielder
+  LogoFielder,
+  Icones
 } from './styles';
 import Logo from '../../assets/logo.svg';
 import { AiFillFolderOpen } from 'react-icons/ai';
@@ -36,20 +35,16 @@ function Home() {
           <img src={Logo} alt='logo' />
         </LogoFielder>
 
-        <IconContext.Provider value={{ color: '#969CBA', size: '20px' }} >
-          <div>
-            <IconsBar>
-              <AiFillFolderOpen />
-              <AiOutlineBarChart />
-              <AiOutlineMail />
-              <BiPaste />
-            </IconsBar>
+        <Icones>
+          <IconContext.Provider value={{ color: '#969CBA', size: '20px' }}>
+            <AiFillFolderOpen />
+            <AiOutlineBarChart />
+            <AiOutlineMail />
+            <BiPaste />
+            <BsGear />
+          </IconContext.Provider>
+        </Icones>
 
-            <ConfigIcon>
-              <BsGear />
-            </ConfigIcon>
-          </div>
-        </IconContext.Provider>
       </Aside>
 
       <SearchBar>

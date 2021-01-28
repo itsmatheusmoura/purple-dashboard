@@ -2,25 +2,12 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     display: grid;
-    grid-template-rows: 70px 1fr 1fr 1fr 1fr;
+    grid-template-rows: 10% 1fr 1fr 1fr 1fr;
     grid-template-columns: 80px 1fr 1fr 1fr;
 
     width: 100vw;
     height: 100vh;
     background: #DFE1EB;
-`;
-
-export const Aside = styled.aside`
-    background-color: #373B53;
-    grid-row-start: 1;
-    grid-row-end: 6;
-
-    div{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: space-between;
-    }
 `;
 
 export const SearchBar = styled.div`
@@ -111,23 +98,37 @@ export const User = styled.div`
     }
 `;
 
-export const IconsBar = styled.div`
-    display: flex;
-    flex-direction: column;
-    background-color: yellow;
+export const Aside = styled.aside`
+    background-color: #373B53;
+    grid-row-start: 1;
+    grid-row-end: 6;
 `;
 
-export const ConfigIcon = styled.div`
-    background-color: blue;
-`;
 
 export const LogoFielder = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #6F52ED;
-    width: 100%;
-    grid-row-start: 1;
-    grid-row-end: 1;
-    padding: 10px 0;
+    height: 10%;
+`;
+
+export const Icones = styled.div`
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    svg{
+        margin-top: 15px;
+        padding: 15px;
+        cursor: pointer;
+    }
+
+    svg:hover{
+        background-color: #FFFFFF;
+        border-radius: 8px;
+        transition: 400ms;
+        fill: #6F52ED
+    }
 `;
