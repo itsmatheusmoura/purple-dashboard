@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import {
   Container,
   Aside,
@@ -30,8 +31,38 @@ import { BsGear } from 'react-icons/bs';
 import { IconContext } from 'react-icons';
 import { BiPencil } from 'react-icons/bi';
 import { AiOutlinePlus } from 'react-icons/ai';
+import { Line, Doughnut, Bar } from 'react-chartjs-2';
 
 function Home() {
+
+  const [chartData, setChartData] = useState({});
+
+  const chart = () => {
+    setChartData({
+      labels: ['segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado', 'domingo'],
+      datasets:[
+        {
+          label: 'Dias da semana',
+          data: [32, 24, 40, 120, 25, 19, 10],
+          backgroundColor: [ 
+            'rgba(75, 192, 192,  0.6)',
+            'rgba(20, 132, 192,  0.6)',
+            'rgba(75, 142, 192,  0.6)',
+            'rgba(40, 112, 192,  0.6)',
+            'rgba(75, 192, 192,  0.6)',
+            'rgba(72, 122, 192,  0.6)',
+            'rgba(50, 152, 192,  0.6)',
+          ]
+        }
+      ],
+      borderWidth: 4
+    });
+  }
+
+  useEffect(() => {
+    chart()
+  }, []);
+
   return (
     <Container>
 
@@ -102,6 +133,20 @@ function Home() {
           )
         }
       </IndicatorsBox>
+
+       <div style={{ height: "200px", width: "500px"}}>
+        <Line data={chartData} options={{
+          responsive: true
+        }}/>
+
+        <Doughnut data={chartData} options={{
+          responsive: true
+        }}/>
+
+        <Bar data={chartData} options={{
+          responsive: true
+        }}/>
+      </div> 
 
     </Container>
   );
