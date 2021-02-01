@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Container,
+   Container,
   Aside,
   SearchBar,
   IndicatorsBox,
@@ -10,11 +10,12 @@ import {
   Login,
   UserAvatar,
   User,
-  LogoFielder,
-  Icones,
+   LogoFielder,
+   Icones,
   TitleContainer,
   Title,
-  ButtonContainer
+  ButtonContainer,
+  Main
 } from './styles';
 import Logo from '../../assets/logo.svg';
 import { AiFillFolderOpen } from 'react-icons/ai';
@@ -31,10 +32,12 @@ import { BsGear } from 'react-icons/bs';
 import { IconContext } from 'react-icons';
 import { BiPencil } from 'react-icons/bi';
 import { AiOutlinePlus } from 'react-icons/ai';
+import { FaBars } from 'react-icons/fa';
 import { Line, Doughnut, Bar } from 'react-chartjs-2';
 
 function Home() {
 
+  const [sidebar, setSidebar] = useState(false);
   const [chartData, setChartData] = useState({});
 
   const chart = () => {
@@ -57,6 +60,12 @@ function Home() {
       ],
       borderWidth: 4
     });
+  };
+
+  const showSideBar = () => {
+    setSidebar(!sidebar);
+    console.log('Funcionando');
+    console.log(sidebar);
   }
 
   useEffect(() => {
@@ -64,91 +73,103 @@ function Home() {
   }, []);
 
   return (
-    <Container>
+      <Container>
+          <Aside statusSideBar={sidebar}>
+            <LogoFielder>
+              <img src={Logo} alt='logo' />
+            </LogoFielder>
+  
+            <Icones>
+              <IconContext.Provider value={{ color: '#969CBA', size: '20px' }}>
+              <div>
+                <FaBars onClick={showSideBar} />
+              </div>
+                <div>
+                  <AiFillFolderOpen title='Documentos'/><small>Documentos</small>
+                </div>
+                <div>
+                  <AiOutlineBarChart title='Graficos e Relatórios'/><small>Graficos e Relatórios</small>
+                </div>
+                <div>
+                  <AiOutlineMail title='Emails'/><small>Emails</small>
+                </div>
+                <div>
+                  <BiPaste title='Chamadas'/><small>Chamadas</small>
+                </div>
+                <div>
+                  <BsGear title='Ajustes'/><small>Ajustes</small>
+                </div>
+              </IconContext.Provider>
+            </Icones>
+          </Aside>
+        
+        <Main>
+          <SearchBar>
+            <SearchForm>
+              <button><AiOutlineSearch color='#C9CED6' size={20} /></button>
+              <input placeholder='Search...' />
+            </SearchForm>
 
-      <Aside>
-        <LogoFielder>
-          <img src={Logo} alt='logo' />
-        </LogoFielder>
-
-        <Icones>
-          <IconContext.Provider value={{ color: '#969CBA', size: '20px' }}>
-            <AiFillFolderOpen />
-            <AiOutlineBarChart />
-            <AiOutlineMail />
-            <BiPaste />
-            <BsGear />
-          </IconContext.Provider>
-        </Icones>
-
-      </Aside>
-
-      <SearchBar>
-        <SearchForm>
-          <button><AiOutlineSearch color='#C9CED6' size={20} /></button>
-          <input placeholder='Search...' />
-        </SearchForm>
-
-        <ProfileBar>
-          <User>
-            <div>
+            <ProfileBar>
+              <User>
+              <div>
               <Username>
-                Cody Simmons
+              Cody Simmons
               </Username>
-
+              
               <Login>
-                Lecturer
+              Lecturer
               </Login>
-            </div>
-
-            <UserAvatar>
+              </div>
+              
+              <UserAvatar>
               <img src={Avatar} alt='avatar' />
-            </UserAvatar>
-          </User>
+              </UserAvatar>
+              </User>
+              
+              <MdExitToApp size={20} color='#C9CED6' id='icon' />
+              <IoMdNotificationsOutline size={20} color='#C9CED6' id='icon' />
+              
+            </ProfileBar>
+          </SearchBar>
 
-          <MdExitToApp size={20} color='#C9CED6' id='icon' />
-          <IoMdNotificationsOutline size={20} color='#C9CED6' id='icon' />
+          <TitleContainer>
+            <Title>
+              <h1>Dashboard</h1>
+              <p>Mobile UX/UI Design course</p>
+            </Title>
 
-        </ProfileBar>
-      </SearchBar>
+            <ButtonContainer>
+              <button><BiPencil />Manage dashboard</button>
+              <button><AiOutlinePlus />Create new dashboard</button>
+            </ButtonContainer>
 
-      <TitleContainer>
-        <Title>
-          <h1>Dashboard</h1>
-          <p>Mobile UX/UI Design course</p>
-        </Title>
+          </TitleContainer>
 
-        <ButtonContainer>
-          <button><BiPencil />Manage dashboard</button>
-          <button><AiOutlinePlus />Create new dashboard</button>
-        </ButtonContainer>
+          <IndicatorsBox>
+            {
+              IconsIndicatorData.map((item) => (
+                <Indicator key={Math.random()} value={34} legend={item.title} icon={item.icon} />
+              )
+              )
+            }
+          </IndicatorsBox>
 
-      </TitleContainer>
+          {/* <div style={{ height: "200px", width: "500px"}}>
+            <Line data={chartData} options={{
+              responsive: true
+            }}/>
 
-      <IndicatorsBox>
-        {
-          IconsIndicatorData.map((item) => (
-            <Indicator key={Math.random()} value={34} legend={item.title} icon={item.icon} />
-          )
-          )
-        }
-      </IndicatorsBox>
+            <Doughnut data={chartData} options={{
+              responsive: true
+            }}/>
 
-       <div style={{ height: "200px", width: "500px"}}>
-        <Line data={chartData} options={{
-          responsive: true
-        }}/>
-
-        <Doughnut data={chartData} options={{
-          responsive: true
-        }}/>
-
-        <Bar data={chartData} options={{
-          responsive: true
-        }}/>
-      </div> 
-
-    </Container>
+            <Bar data={chartData} options={{
+              responsive: true
+            }}/>
+          </div>  */}
+        </Main>
+      </Container>
   );
 }
 

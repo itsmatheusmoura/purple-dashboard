@@ -1,49 +1,17 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    display: grid;
-    grid-template-rows: 10% 1fr 1fr 1fr 1fr;
-    grid-template-columns: 80px 1fr 1fr 1fr;
-
     width: 100vw;
     height: 100vh;
-    background: #DFE1EB;
+	display: flex;
 `;
 
 export const SearchBar = styled.div`
     display: flex;
     align-items: center;
-
     background-color: #FFFFFF;
-    grid-row-start: 1;
-    grid-row-end: 1;
-    grid-column-start: 2;
-    grid-column-end: 6;
-
     padding: 10px;
-    overflow: hidden;
-`;
-
-export const IndicatorsBox = styled.div`
-    grid-column-start: 2;
-    grid-column-end: 6;
-    grid-row: 3/4;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: -250px;
-`;
-
-export const ProfileBar = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-
-    #icon{
-        margin: 10px;
-    }
+    height: 10%;
 `;
 
 export const SearchForm = styled.form`
@@ -66,6 +34,25 @@ export const SearchForm = styled.form`
         cursor: pointer;
     }
 `;
+
+export const IndicatorsBox = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+`;
+
+export const ProfileBar = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+
+    #icon{
+        margin: 10px;
+    }
+`;
+
 
 export const Username = styled.span`
     color: #000000;
@@ -101,9 +88,10 @@ export const User = styled.div`
 `;
 
 export const Aside = styled.aside`
+    display: flex;
+    flex-direction: column;
     background-color: #373B53;
-    grid-row-start: 1;
-    grid-row-end: 6;
+    width: 20%;
 `;
 
 
@@ -113,6 +101,7 @@ export const LogoFielder = styled.div`
     justify-content: center;
     background-color: #6F52ED;
     height: 10%;
+    cursor: pointer;    
 `;
 
 export const Icones = styled.div`
@@ -121,28 +110,41 @@ export const Icones = styled.div`
     flex-direction: column;
     align-items: center;
 
-    svg{
+    div{
+        display: flex;
+        align-items: center;
         margin-top: 15px;
+        width: 90%;
+    }
+
+    small{
+        color: #FFFFFF;
+    }
+
+    svg{
         padding: 15px;
         cursor: pointer;
     }
 
-    svg:hover{
+    div:hover{
         background-color: #FFFFFF;
         border-radius: 8px;
         transition: 400ms;
-        fill: #6F52ED
+        fill: #6F52ED;
+
+        small{
+            color: #6F52ED;
+        }
     }
 `;
 
 export const TitleContainer = styled.div`
-    grid-column: 2/6;
-    grid-row: 2/3;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: -30px 150px;
     max-height: 150px;
+    margin-left: 15px;
+    margin-bottom: 15px;
 `;
 
 export const Title = styled.div`
@@ -211,4 +213,9 @@ export const ButtonContainer = styled.div`
 
 
     }
+`;
+
+export const Main = styled.main`
+    display: flex;
+    flex-direction: column;
 `;

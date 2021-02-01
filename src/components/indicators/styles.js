@@ -11,6 +11,7 @@ export const Indicator = styled.div`
     background-color: #FFFFFF;
     margin: 10px;
     border-radius: 4px;
+    border: 1px solid #eee;
 
     #icon{
         padding: 10px;
