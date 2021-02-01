@@ -43,6 +43,8 @@ export const IndicatorsBox = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-basis: 295px;
+    flex-wrap: wrap;
 
 `;
 
@@ -94,8 +96,18 @@ export const Aside = styled.aside`
     display: flex;
     flex-direction: column;
     background-color: #373B53;
-    width: 10%;
+    width: 5%;
+    min-width: 50px;
     height: 100vh;
+    transition: 800ms;
+
+    &:hover{
+        position: fixed;
+        top: 0;
+        width: 10%;
+        min-width: 200px;
+        transition: 800ms;
+    }
 `;
 
 
@@ -119,10 +131,13 @@ export const Icones = styled.div`
         align-items: center;
         margin-top: 15px;
         width: 90%;
+        cursor: pointer;
+        justify-content: center;
     }
 
     small{
         color: #FFFFFF;
+        display: none;
     }
 
     svg{
@@ -138,6 +153,17 @@ export const Icones = styled.div`
 
         small{
             color: #6F52ED;
+        }
+    }
+
+    &:hover{
+        div{
+            justify-content: stretch;
+        }
+
+        small{
+            display: block;
+            transition: 800ms;
         }
     }
 `;
@@ -221,7 +247,7 @@ export const Main = styled.main`
     display: flex;
     flex-direction: column;
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 `;
 
 export const ChartContainer = styled.div`
@@ -230,7 +256,8 @@ export const ChartContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -150px;
+    flex-basis: 200px;
+    flex-wrap: wrap;
 `;
 export const Chart = styled.div`
     width: 500px;
@@ -242,3 +269,5 @@ export const Chart = styled.div`
     justify-content: center;
     align-items: center;
 `;
+
+
