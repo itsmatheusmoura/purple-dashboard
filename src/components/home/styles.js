@@ -57,7 +57,6 @@ export const ProfileBar = styled.div`
     }
 `;
 
-
 export const Username = styled.span`
     color: #000000;
     font-size: 14px;
@@ -95,14 +94,8 @@ export const Aside = styled.aside`
     display: flex;
     flex-direction: column;
     background-color: #373B53;
-    width: 20%;
+    width: 10%;
     height: 100vh;
-    position: absolute;
-    z-index: 0;
-    left: ${props => props.sidebar ? 0 : '-100%'};
-    top: 0;
-    transition: 10000ms;
-
 `;
 
 
@@ -221,12 +214,31 @@ export const ButtonContainer = styled.div`
                 fill: #6F52ED;
             }
         }
-
-
     }
 `;
 
 export const Main = styled.main`
     display: flex;
     flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+`;
+
+export const ChartContainer = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -150px;
+`;
+export const Chart = styled.div`
+    width: 500px;
+    height: 300px;
+    border: 1px solid #eee;
+    margin: 5px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
