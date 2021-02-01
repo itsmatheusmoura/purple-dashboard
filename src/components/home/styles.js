@@ -4,6 +4,10 @@ export const Container = styled.div`
     width: 100vw;
     height: 100vh;
 	display: flex;
+
+    svg{
+        cursor: pointer;
+    }
 `;
 
 export const SearchBar = styled.div`
@@ -92,6 +96,13 @@ export const Aside = styled.aside`
     flex-direction: column;
     background-color: #373B53;
     width: 20%;
+    height: 100vh;
+    position: absolute;
+    z-index: 0;
+    left: ${props => props.sidebar ? 0 : '-100%'};
+    top: 0;
+    transition: 10000ms;
+
 `;
 
 

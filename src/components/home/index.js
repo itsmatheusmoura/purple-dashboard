@@ -31,7 +31,7 @@ import { BiPaste } from 'react-icons/bi';
 import { BsGear } from 'react-icons/bs';
 import { IconContext } from 'react-icons';
 import { BiPencil } from 'react-icons/bi';
-import { AiOutlinePlus } from 'react-icons/ai';
+import { AiOutlinePlus, AiOutlineClose } from 'react-icons/ai';
 import { FaBars } from 'react-icons/fa';
 import { Line, Doughnut, Bar } from 'react-chartjs-2';
 
@@ -74,16 +74,20 @@ function Home() {
 
   return (
       <Container>
-          <Aside statusSideBar={sidebar}>
+          { sidebar ? <FaBars onClick={() => setSidebar(true) }/> : null }
+            
+          <Aside sidebar={sidebar}>
             <LogoFielder>
               <img src={Logo} alt='logo' />
+
             </LogoFielder>
   
             <Icones>
               <IconContext.Provider value={{ color: '#969CBA', size: '20px' }}>
               <div>
-                <FaBars onClick={showSideBar} />
+                { sidebar ? <AiOutlineClose onClick={() => showSideBar()} /> : <FaBars onClick={() => showSideBar() }/>}
               </div>
+              
                 <div>
                   <AiFillFolderOpen title='Documentos'/><small>Documentos</small>
                 </div>
