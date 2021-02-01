@@ -76,19 +76,19 @@ function Home() {
         <Icones>
           <IconContext.Provider value={{ color: '#969CBA', size: '20px' }}>
             <div>
-              <AiFillFolderOpen title='Documentos' /><small>Documentos</small>
+              <AiFillFolderOpen title='Document' /><small>Document</small>
             </div>
             <div>
-              <AiOutlineBarChart title='Graficos e Relatórios' /><small>Graficos e Relatórios</small>
+              <AiOutlineBarChart title='Charts and Reports' /><small>Charts and Reports</small>
             </div>
             <div>
               <AiOutlineMail title='Emails' /><small>Emails</small>
             </div>
             <div>
-              <BiPaste title='Chamadas' /><small>Chamadas</small>
+              <BiPaste title='Calls' /><small>Calls</small>
             </div>
             <div>
-              <BsGear title='Ajustes' /><small>Ajustes</small>
+              <BsGear title='Configuration' /><small>Configuration</small>
             </div>
           </IconContext.Provider>
         </Icones>
